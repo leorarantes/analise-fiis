@@ -1,29 +1,3 @@
-"""Monta uma planilha com os indicadores de FIIs da B3, via yfinance.
-
-Indicadores (somente estes):
-    - Rentabilidade acumulada (2, 5 e 10 anos)
-    - Dividend Yield (DY) atual e média de 5 anos
-    - Vacância física e vacância financeira
-    - Número de cotistas
-    - Liquidez média diária
-
-O yfinance NÃO fornece vacância nem número de cotistas para FIIs. Essas três
-colunas saem em branco (amarelas) para preenchimento manual com dados do
-Fundamentus, StatusInvest ou dos relatórios gerenciais. Se existir um arquivo
-fundamentos_extras.csv na mesma pasta, elas são preenchidas automaticamente:
-
-    Ticker,Vacância física (%),Vacância financeira (%),Cotistas
-    HGLG11,2.5,1.8,350000
-
-    (percentuais em pontos, ex.: 2.5 = 2,5%; cotistas sem separador de milhar)
-
-Uso:
-    pip install yfinance pandas openpyxl
-    python coletar_indicadores_fiis.py
-
-Saída: indicadores_fiis.xlsx (mesma pasta do script).
-"""
-
 from datetime import date
 from pathlib import Path
 
